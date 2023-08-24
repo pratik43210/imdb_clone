@@ -2,7 +2,7 @@ import Image from "next/image";
 import {FiThumbsUp} from "react-icons/fi"
 
 async function getMovie(movieId){
-    const res=await fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${process.env.API_KEY}`,{next:{revalidate:10000}});
+    const res=await fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${process.env.API_KEY}`);
 
     return await res.json();
 }

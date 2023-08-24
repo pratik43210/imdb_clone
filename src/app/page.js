@@ -4,7 +4,7 @@ const API_KEY=process.env.API_KEY;
 const BASE_URL="https://api.themoviedb.org/3/movie/";
 
 async function getResults(genre){
-  const res=await fetch(`${BASE_URL+(genre==="fetchTopRated"?"top_rated":"popular")}?api_key=${API_KEY}&page=1`,{next:{revalidate:10000}});
+  const res=await fetch(`${BASE_URL+(genre==="fetchTopRated"?"top_rated":"popular")}?api_key=${API_KEY}`);
 
   if(!res.ok){
     throw new Error("Failed to fetch data");
