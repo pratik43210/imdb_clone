@@ -12,7 +12,7 @@ export default async function MoviePage({params:{id}}) {
     const movieId=id;
     const movie=await getMovie(movieId);
     // console.log(movie);
-  return (
+    return (
     <div className=" w-full lg:w-[80%] mx-auto">
       <div className="p-4 md:pt-8 flex flex-col md:flex-row items-center max-w-6xl mx-auto md:space-x-6">
         <div className="flex flex-wrap md:flex-nowrap justify-center m-4">
@@ -27,7 +27,7 @@ export default async function MoviePage({params:{id}}) {
               Date released: {movie.release_date}
             </div>
             <div className="flex flex-wrap">
-              {movie.genres.map(genre=><div key={genre.id} className="m-1 p-1 dark:bg-zinc-700 bg-amber-100">{genre.name}</div>)}
+              {movie.length && movie.genres.map(genre=><div key={genre.id} className="m-1 p-1 dark:bg-zinc-700 bg-amber-100">{genre.name}</div>)}
             </div>
             <div className="flex items-center gap-2">
               Votes: <FiThumbsUp/>{movie.vote_count}

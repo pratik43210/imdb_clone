@@ -12,7 +12,7 @@ export default async function MoviePage({params:{id}}) {
     const movieId=id;
     const movie=await getMovie(movieId);
     // console.log(movie);
-  return (
+  if(movie.length)return (
     <div className=" w-full lg:w-[80%] mx-auto">
       <div className="p-4 md:pt-8 flex flex-col md:flex-row items-center max-w-6xl mx-auto md:space-x-6">
         <div className="flex flex-wrap md:flex-nowrap justify-center m-4">
